@@ -2,7 +2,7 @@ extends layout
 
 block body
 
-	div.container
+	div.container(style='margin-bottom:250px')
 		div.content
 			h1 Time Trakr
 			h2 The time tracking app that doesn't get in your way.
@@ -21,7 +21,8 @@ block body
 			img(src='screenshot.png')
 
 	div(class='container more-info')
-		div.header What is Time Trakr ?
+		a(name='more-info')
+			div.header What is Time Trakr ?
 		p.
 			Time Trakr is the tiny productivity app that doesn't get in your way.
 			It has just the features you need, and doesn't have the features you don't!<br/>
