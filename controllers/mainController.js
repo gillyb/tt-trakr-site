@@ -1,20 +1,16 @@
 
 app.get('/', function(req, res) {
-	res.render('homepage', {
-		videos: getHomePageVideos(popularVideos),
-		favoriteVideos: getHomePageVideos(favoriteVideos),
-		currentVideo:null
-	});
+	res.render('homepage');
 });
 
 app.get('/download', function(req, res) {
-	res.render('homepage', {
-		videos: getHomePageVideos(popularVideos),
-		favoriteVideos: getHomePageVideos(favoriteVideos),
-		currentVideo: videoId
-	});
+	
 });
 
-app.post('/buy', function(req, res) {
+app.get('/buy', function(req, res) {
 	
+});
+
+app.get('/support', function(req, res) {
+
 });
