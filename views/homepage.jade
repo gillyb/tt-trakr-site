@@ -3,6 +3,8 @@ extends layout
 block body
 
 	script(type='text/javascript', src='https://sellfy.com/js/api_buttons.js')
+	script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+	script(src='main.js')
 
 	div.container(style='margin-bottom:250px')
 		div.content
@@ -17,7 +19,7 @@ block body
 				//span(class='light-text separator') |
 				//a(class='sub-link light-text', href='/') Buy
 				//span(class='light-text separator') | 
-				a(class='sub-link light-text', href='/support') Support
+				a(class='sub-link light-text', id='support-btn', href='#') Support
 
 		div.screenshot
 			img(src='screenshot.png')
@@ -89,7 +91,7 @@ block body
 				div.field.textarea
 					span.label Message :
 					span.field 
-						textarea
+						textarea(id='message')
 				div.actions.actions
-					span.btn.btn-cancel Cancel
-					span.btn.btn-send Send
+					span.btn.btn-cancel#close-support Cancel
+					span.btn.btn-send#send-support Send
