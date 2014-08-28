@@ -2,13 +2,15 @@ extends layout
 
 block body
 
+	script(type='text/javascript', src='https://sellfy.com/js/api_buttons.js')
+
 	div.container(style='margin-bottom:250px')
 		div.content
 			h1 Time Trakr
 			h2 The time tracking app that doesn't get in your way.
 			div.actions
 				a(class='button trial', href='/download') Free Trial
-				a(class='button buy') Buy for $1.99
+				a(href='https://sellfy.com/p/QeQZ/', id='QeQZ', class='button buy sellfy-buy-button') Buy for $1.99
 				a(class='read-more-link', href='#more-info') Read more &gt;&gt;
 			div.sub-menu
 				//a(class='sub-link light-text', href='/') Download
@@ -78,14 +80,16 @@ block body
 				Please feel free to contact me with any questions, bugs, feature requests, complaints or compliments.<br/>
 				I will try to reply as soon as possible.<br/>
 				Have a great day :)
+
 			div.form
-				div.field
+				div.field.email
 					span.label Email :
-					span.field input(type='text', id='email')
-				div.field
+					span.field
+						input(type='text', id='email')
+				div.field.textarea
 					span.label Message :
 					span.field 
 						textarea
-				div.actions
-					span.btn-cancel Cancel
-					span.btn-send Send
+				div.actions.actions
+					span.btn.btn-cancel Cancel
+					span.btn.btn-send Send
