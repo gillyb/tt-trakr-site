@@ -12,8 +12,14 @@ $(function() {
 		$('.support-modal-border').addClass('hidden');
 	};
 	var sendSupport = function() {
-		var email = $('#email').val();
-		var message = $('#message').val();
+		var email = $('#email').val().trim();
+		var message = $('#message').val().trim();
+
+		if (email.length <= 4 || message.length <= 4) {
+			alert('Your message has been sent. Thanks!');
+			hideSupportModal();
+		}
+
 		$.ajax({
 			type: 'post',
 			url: '/support/send',

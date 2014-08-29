@@ -16,6 +16,12 @@ app.get('/buy', function(req, res) {
 
 app.post('/support/send', function(req, res) {
 
+	var senderEmail = req.body.email.trim();
+	var message = req.body.message.trim();
+
+	if (senderEmail == '' || senderEmail.length <= 4 || message == '' || message.length <= 4)
+		res.json({ 'STATUS': 'OK' });
+
 	// create reusable transporter object using SMTP transport
 	var transporter = nodemailer.createTransport({
 	    service: 'Gmail',
