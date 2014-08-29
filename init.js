@@ -10,6 +10,7 @@ app.set('env', 'development'); // TODO: this should be defined in process.env.NO
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // static libraries

@@ -32,8 +32,8 @@ app.post('/support/send', function(req, res) {
 	var mailOptions = {
 	    from: 'TimeTrakr Support', // sender address
 	    to: 'gillyb@gmail.com', // list of receivers
-	    subject: 'TimeTrakr.com - Support (' + req.email + ')', // Subject line
-	    text: req.message // plaintext body
+	    subject: 'TimeTrakr.com - Support (' + req.body.email + ')', // Subject line
+	    text: req.body.message // plaintext body
 	    //html: '<b>Hello world ✔</b>' // html body
 	};
 
