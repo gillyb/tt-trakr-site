@@ -12,7 +12,22 @@ $(function() {
 		$('.support-modal-border').addClass('hidden');
 	};
 	var sendSupport = function() {
-
+		var email = $('#email').val();
+		var message = $('#message').val();
+		$.ajax({
+			type: 'post',
+			url: '/support/send',
+			data: {
+				email: email,
+				message: message
+			}
+		}).success(function() {
+			alert('Your message has been sent. Thanks!');
+			hideSupportModal();
+		}).error(function() {
+			alert('Error while trying to send message');
+			hideSupportModal();
+		});
 	};
 
 	$('#support-btn').click(showSupportModal);
